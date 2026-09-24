@@ -1,53 +1,77 @@
-# Gym Buddy — Adaptive Fitness Tracker
+# 🏋️ Gym Buddy — Adaptive Fitness Platform
 
-A portfolio-ready full-stack fitness app built with React + Vite and Node.js + Express.
+> A full-stack fitness companion that helps users decide **what to train today**, track workouts in real time, and understand their training progress.
 
-## What makes it different
+Gym Buddy is designed to be more than a basic workout tracker. Instead of making users search through a large exercise library, it combines readiness, training history and workout goals to provide a more personalized training experience.
 
-- **Readiness score** — turns recovery + recent consistency into a simple daily training recommendation.
-- **Adaptive Pick** — the home screen recommends a workout instead of making the user hunt through a library.
-- **Live workout mode** — real timer, pause/resume, exercise progression, set completion, rest countdown and calorie estimate.
-- **Training Lab** — filter workouts by training goal/category.
-- **Progress analytics** — consistency score, weekly target, personal records and recent sessions.
-- **Buddy Pulse** — lightweight social accountability concept to make the app feel like a gym companion, not another tracker.
-- **Editable profile** — profile data is served and updated through the REST API.
-- **REST API architecture** — separate routes for user, activity, workouts, sessions and stats.
+---
 
-## Tech stack
+## ✨ Key Features
 
-**Frontend:** React 18, Vite, CSS  
-**Backend:** Node.js, Express, REST API  
-**Architecture:** component-based React UI + API layer + backend data/service layer
+### 🧠 Daily Readiness Score
+A simple readiness system evaluates recent activity and recovery information to provide a daily training recommendation.
 
-## Run locally
+### ⚡ Adaptive Workout Pick
+The dashboard recommends a suitable workout instead of forcing users to browse through the entire workout library.
 
-### Backend
-```bash
-cd backend
-npm install
-npm start
-```
-Runs on `http://localhost:4000`.
+### 🏋️ Live Workout Mode
+Track a workout while training with:
 
-### Frontend
-In another terminal:
-```bash
-cd frontend
-npm install
-npm run dev
-```
-Runs on `http://localhost:5173`.
+- Exercise progression
+- Set completion
+- Workout timer
+- Pause / resume
+- Rest countdown
+- Estimated calories burned
 
-The Vite config proxies `/api` to the backend.
+### 🔬 Training Lab
+Explore workouts based on training goals and categories such as:
 
-## CV bullet
+- Strength
+- Upper Body
+- Lower Body
+- Core
+- Cardio
 
-> Built a full-stack adaptive fitness tracking platform using React, Vite, Node.js and Express, featuring live workout sessions, set/rest tracking, personalized readiness scoring, progress analytics, personal records and RESTful APIs.
+### 📊 Progress Analytics
 
-## Next upgrades for production
+Track important training metrics including:
 
-- MongoDB/PostgreSQL persistence + authentication/JWT
-- Real wearable/step integrations
-- Exercise video library
-- Real-time buddy matching with WebSockets
-- Cloud deployment and automated tests
+- Weekly training target
+- Consistency score
+- Workout duration
+- Personal records
+- Recent workout sessions
+
+### 👥 Buddy Pulse
+A lightweight social accountability feature designed to make fitness feel more interactive.
+
+Users can see activity and encourage each other through workout interactions.
+
+### 👤 Profile Management
+Users can view and update their fitness profile through the backend API.
+
+---
+
+# 🖥️ Application Architecture
+
+```text
+                    ┌──────────────────────┐
+                    │      React + Vite    │
+                    │      Frontend        │
+                    └──────────┬───────────┘
+                               │
+                               │ REST API
+                               ▼
+                    ┌──────────────────────┐
+                    │    Node.js + Express │
+                    │       Backend        │
+                    └──────────┬───────────┘
+                               │
+                    ┌──────────┴───────────┐
+                    │                      │
+              User Data              Workout Data
+                    │                      │
+                    └──────────┬───────────┘
+                               │
+                         Service Layer
