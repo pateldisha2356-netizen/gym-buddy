@@ -10,6 +10,16 @@ const statsRoutes = require("./routes/stats");
 const app = express();
 const PORT = process.env.PORT || 4000;
 
+import cors from "cors";
+
+app.use(cors({
+  origin: [
+    "http://localhost:5173",
+    "https://gym-buddy-disha.vercel.app"
+  ],
+  credentials: true
+}));
+
 app.use(cors());
 app.use(express.json());
 
