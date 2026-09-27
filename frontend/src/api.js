@@ -1,4 +1,4 @@
-const BASE="/api";
+const BASE = import.meta.env.VITE_API_URL || "/api";
 async function request(path,options={}) {
   const res=await fetch(`${BASE}${path}`,{headers:{"Content-Type":"application/json"},...options});
   if(!res.ok){const b=await res.json().catch(()=>({}));throw new Error(b.error||`Request failed: ${res.status}`);}
